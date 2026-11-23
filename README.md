@@ -1,31 +1,26 @@
 # Connect-4-Python
 
-## 🎲 Description  
-Ce projet est une **implémentation orientée objet du jeu Puissance 4 (Connect 4)** en Python, réalisée dans le cadre d’un projet de lycée.  
-Il met en œuvre les principes fondamentaux de la **programmation orientée objet (POO)**, tout en permettant de pratiquer la logique algorithmique et la gestion de jeu en console.
+Puissance 4 pour deux joueurs avec interface graphique Tkinter, écrit en Python au lycée pour pratiquer la programmation orientée objet.
 
----
+## Fonctionnement
 
-## 🧱 Objectifs pédagogiques  
-- Comprendre et appliquer les concepts de la POO : **classes**, **objets**, **méthodes** et **encapsulation**.  
-- Concevoir une architecture claire et modulaire.  
-- Mettre en place une logique de jeu complète : gestion du plateau, alternance des joueurs, conditions de victoire.  
-- Manipuler des structures de données simples (listes, boucles, conditions) dans un cadre structuré.
+- Grille de 7 colonnes sur 6 lignes dessinée dans une fenêtre Tkinter.
+- On choisit la colonne avec les boutons 1 à 7, puis on clique sur **Jouer** : le pion tombe à la première case libre.
+- La couleur qui commence (rouge ou jaune) est tirée au hasard, et l'interface indique à qui c'est le tour.
+- Après chaque coup, le programme cherche un alignement de 4 pions à l'horizontale, à la verticale ou en diagonale. En cas de victoire, le bouton **Jouer** se désactive.
 
----
+## Lancer le jeu
 
-## 🧩 Fonctionnalités  
-- Jeu **entièrement en console**, jouable à deux.  
-- Grille 7 × 6 dynamique, affichée à chaque tour.  
-- Vérification automatique des conditions de victoire : alignement horizontal, vertical et diagonal.  
-- Gestion des erreurs de saisie et des colonnes pleines.  
-- Détection d’un match nul lorsque le plateau est complet.  
-- Relance d’une partie sans redémarrage du programme.
+Python 3 avec Tkinter (inclus dans l'installation standard sous Windows et macOS ; sous Linux : `sudo apt install python3-tk`).
 
----
+```bash
+git clone https://github.com/NardenLaSouris/connect-4-python.git
+cd connect-4-python
+python3 "puissance 4 v2.py"
+```
 
-## ⚙️ Installation & exécution  
-1. **Cloner le dépôt**  
-   ```bash
-   git clone https://github.com/JustTheJules/connect-4-python.git
-   cd connect-4-python
+## Structure du code
+
+- `Pion` : position et couleur d'un pion, et son dessin sur le canevas.
+- `Grille` : plateau de 7 × 6, ajout d'un pion dans une colonne, détection de la victoire dans les quatre directions.
+- Le reste du fichier construit la fenêtre (canevas, choix de colonne, boutons Jouer et Quitter).
